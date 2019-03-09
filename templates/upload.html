@@ -1,0 +1,46 @@
+<html>
+   <h1>Welcome to The Object Finder</h1>
+
+   <h2>Please follow these steps to find the identity of your object:</h2>
+
+   <p>
+      <ol><strong>1. First, choose a file of an image that contains the image you wish to identify.</strong></ol>
+      <ol><strong>2. Then, click on the 'Submit' button to send the image file to the server.</strong></ol>
+   </p>
+
+   <body>
+      <form action = "/" method = "POST" enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+
+      <style>
+         h1 {
+            color: rgb(13, 98, 255);
+            text-align: center;
+         }
+
+         body {
+            background-color: turquoise;
+         }
+
+         p {
+            
+         }
+
+         .rotateimg90 {
+            -webkit-transform:rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+         }
+      </style>
+   <div>
+      <br><br><br>
+      {% if image %}
+         <img src="{{ url_for('static', filename='pics/'+image) }}" width="300px">
+      {% endif %}
+   </div>
+   </body>
+</html>
